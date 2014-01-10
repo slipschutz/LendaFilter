@@ -179,12 +179,13 @@ Double_t Filter::GetZeroCrossing(std::vector <Double_t> & CFD){
   }
 
   if (thisEventsZeroCrossings.size() == 0) // no Zero Crossing found
-    thisEventsZeroCrossings.push_back(BAD_NUM);
-
+    return BAD_NUM;
+  else
+  return thisEventsZeroCrossings[MaxIndex]; // take the max one
   /*  if (thisEventsZeroCrossings.size() != 1 )
     return 2*BAD_NUM;
   */
-  return thisEventsZeroCrossings[MaxIndex]; // take the first one
+
 }
 
 
