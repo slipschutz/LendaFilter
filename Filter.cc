@@ -157,7 +157,7 @@ std::vector <Double_t> Filter::CFD(std::vector <Double_t> &thisEventsFF,
 
 #define BAD_NUM -10008
 
-Double_t Filter::GetZeroCrossing(std::vector <Double_t> & CFD){
+Double_t Filter::GetZeroCrossing(std::vector <Double_t> & CFD,Int_t & NumZeroCrossings){
 
 
   Double_t softwareCFD;
@@ -177,7 +177,7 @@ Double_t Filter::GetZeroCrossing(std::vector <Double_t> & CFD){
 	}
       }
   }
-
+  NumZeroCrossings=thisEventsZeroCrossings.size();
   if (thisEventsZeroCrossings.size() == 0) // no Zero Crossing found
     return BAD_NUM;
   else

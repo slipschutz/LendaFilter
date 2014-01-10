@@ -32,7 +32,7 @@ public:
   std::vector <Double_t> CFD( std::vector <Double_t> &,Double_t,Double_t);
 
   
-  Double_t GetZeroCrossing(std::vector <Double_t> &);
+  Double_t GetZeroCrossing(std::vector <Double_t> &,Int_t &);
 
   Double_t GetZeroCubic(std::vector <Double_t> &);
   
