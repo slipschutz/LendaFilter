@@ -163,7 +163,7 @@ Double_t Filter::GetZeroCrossing(std::vector <Double_t> & CFD){
   Double_t softwareCFD;
   std::vector <Double_t> thisEventsZeroCrossings(0);
   Double_t MaxValue=0;
-  Int_t MaxIndex;
+  Int_t MaxIndex=-1;
 
   for (int j=(CFD.size()/2.0)-10;j< (int) (CFD.size()/2.0)+10;j++) { 
     if (CFD[j] >= 0 && CFD[j+1] < 0 && 
@@ -413,5 +413,5 @@ Double_t Filter::getMaxPulseHeight(vector <UShort_t> &trace){
 
 Int_t Filter::getStartForPulseShape(Double_t SoftWareCFD,Int_t TraceDelay){
 
-  return SoftWareCFD-TraceDelay-4;
+  return TMath::Floor(SoftWareCFD+TraceDelay-4);
 }
